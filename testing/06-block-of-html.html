@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Block of HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+ 
+  <body class="bg-black m-0 p-0">
+
+    <div id="root"></div>
+    <!-- Load React, ReactDOM, and Babel (to handle JSX) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+      function MyJsxComponent() {
+
+        const myJsxElement = (
+          <div className="flex h-screen items-center justify-center bg-black">
+            <ul className="text-[#00ff41] font-mono text-5xl font-bold uppercase tracking-widest">
+              <li>Apples&#127822; </li>
+              <li>Bananas&#127820;  </li>
+              <li>Cherries&#127826; </li>
+              <li>Kiwies&#129373; </li>
+              <li>Peaches&#127825; </li>
+              <li>Pear&#127824; </li>
+              <li>Strawberries&#127827; </li>
+            </ul>
+          </div>
+        );
+
+        return myJsxElement;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<MyJsxComponent />);
+    </script>
+  </body>
+</html>

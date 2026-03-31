@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Matrix App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black m-0 p-0 overflow-hidden">
+    <div id="root"></div>
+
+    <!-- Load React, ReactDOM, and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      
+      const { useState } = React;
+
+      function FirstApp() {
+
+        const [count, setCount] = useState(0);
+
+        return (
+
+              <div className="min-h-screen bg-black text-[#00ff41] font-mono flex flex-col items-center justify-center p-4 text-center">
+                
+                {/* ALIGNED LOGO SECTION */}
+                <div className="flex items-center justify-center gap-8 md:gap-12 mb-10">
+                  <a href="https://vitejs.dev" target="_blank" className="hover:drop-shadow-[0_0_15px_#00ff41] transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" className="h-20 md:h-28 w-auto" alt="Vite logo" />
+                  </a>
+                  
+                  <div className="text-4xl font-bold opacity-50">+</div>
+
+                  <a href="https://react.dev" target="_blank" className="hover:drop-shadow-[0_0_15px_#00ff41] transition-all animate-[spin_10s_linear_infinite]">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" className="h-20 md:h-28 w-auto" alt="React logo" />
+                  </a>
+                </div>
+
+                <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-6 drop-shadow-[0_0_10px_#00ff41]">
+                  Vite + React
+                </h1>
+
+                <div className="border border-[#00ff41] p-8 shadow-[0_0_20px_rgba(0,255,65,0.2)] bg-black">
+                  <button 
+                    onClick={() => setCount((c) => c + 1)} 
+                    className="bg-transparent border-2 border-[#00ff41] px-8 py-3 text-xl font-bold uppercase hover:bg-[#00ff41] hover:text-black transition-all duration-300 cursor-pointer mb-4 shadow-[0_0_10px_#00ff41]" >
+                    Access Core: {count}
+                  </button>
+                  <p className="animate-pulse text-sm">
+                      &gt; [ SYSTEM STATUS: OPERATIONAL ]
+                  </p>
+                </div>
+
+                <p className="mt-12 text-3xl uppercase tracking-[0.5em] opacity-40 hover:opacity-100 transition-opacity cursor-default">
+                  Click on the logos to follow the white rabbit!
+                </p>
+              </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<FirstApp />);
+    </script>
+  </body>
+</html>

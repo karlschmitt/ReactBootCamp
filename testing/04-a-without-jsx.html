@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>Without JSX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black m-0 p-0 overflow-hidden">
+    <div id="root"></div>
+    <!-- Load React, ReactDOM, and Babel (to handle JSX) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+      // PASTE YOUR SNIPPET HERE
+      const myElement = React.createElement(
+        'h1', 
+        {
+          // This is where you put your Tailwind classes
+          className: 'text-[#00ff41] font-mono text-5xl font-bold uppercase tracking-widest' 
+        }, 
+        'I do not use JSX!');
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(myElement);
+    </script>
+  </body>
+</html>

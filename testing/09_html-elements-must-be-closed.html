@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>HTML Elements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+ 
+  <body class="bg-black m-0 p-0">
+
+    <div id="root"></div>
+    <!-- Load React, ReactDOM, and Babel (to handle JSX) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+      // PASTE YOUR SNIPPET HERE
+
+      function FirstNamesComponent() {
+
+        // Clases reutilizables para los inputs (estilo terminal)
+        const inputClasses = "w-full bg-black border border-[#00ff41] p-2 text-[#00ff41] focus:outline-none focus:ring-1 focus:ring-[#00ff41] placeholder:opacity-30 mb-4 font-mono";
+        const labelClasses = "block text-[#00ff41] text-xs uppercase tracking-widest mb-1 opacity-80";
+ 
+        const reply = (
+
+          <>
+            {/* Nombre y Segundo Nombre */}
+            <div>
+              <label className={labelClasses}>Nombre</label>
+              <input type="text" className={inputClasses} placeholder="Neo" required />
+            </div>
+            <div>
+              <label className={labelClasses}>Segundo Nombre</label>
+              <input type="text" className={inputClasses} placeholder="Thomas" />
+             </div>
+          </>
+
+        );
+
+        return reply;
+      }
+
+      function LastNamesComponent() {
+
+        // Clases reutilizables para los inputs (estilo terminal)
+        const inputClasses = "w-full bg-black border border-[#00ff41] p-2 text-[#00ff41] focus:outline-none focus:ring-1 focus:ring-[#00ff41] placeholder:opacity-30 mb-4 font-mono";
+        const labelClasses = "block text-[#00ff41] text-xs uppercase tracking-widest mb-1 opacity-80";
+ 
+        const reply = (
+
+            <>
+              {/* Apellidos */}
+              <div>
+                <label className={labelClasses}>Primer Apellido</label>
+                <input type="text" className={inputClasses} placeholder="Anderson" required />
+              </div>
+              <div>
+                <label className={labelClasses}>Segundo Apellido</label>
+                <input type="text" className={inputClasses} placeholder="..." />
+              </div> 
+            </>
+
+          );
+
+        return reply;
+
+      }
+
+      function TelefonAndEmailComponent() {
+
+        // Clases reutilizables para los inputs (estilo terminal)
+        const inputClasses = "w-full bg-black border border-[#00ff41] p-2 text-[#00ff41] focus:outline-none focus:ring-1 focus:ring-[#00ff41] placeholder:opacity-30 mb-4 font-mono";
+        const labelClasses = "block text-[#00ff41] text-xs uppercase tracking-widest mb-1 opacity-80";
+
+        const reply = (
+
+          <>
+
+            {/* Teléfono */}
+            <label className={labelClasses}>Número de Teléfono</label>
+            <input type="tel" className={inputClasses} placeholder="+34 000 000 000" required />
+            
+            {/* Email */}
+            <label className={labelClasses}>Correo Electrónico</label>
+            <input type="email" className={inputClasses} placeholder="neo@nebula.com" required />
+            
+          </>
+
+        );
+
+        return reply;
+      }
+
+      function SubmitButton() {
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert("Datos enviados a la Matrix...");
+        };
+
+        const reply = (
+                <>
+                  {/* Botón de envío */}
+                  <button 
+                    type="submit"
+                    className="w-full mt-4 bg-transparent border-2 border-[#00ff41] text-[#00ff41] py-3 uppercase font-bold hover:bg-[#00ff41] hover:text-black transition-all duration-300 shadow-[0_0_10px_#00ff41]"
+                  >
+                    Enviar a la Matrix
+                  </button>
+                </>
+        );
+
+        return reply;
+      }
+
+      function InnerComponent() {
+        
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert("Datos enviados a la Matrix...");
+        };
+
+        const reply = ( <>
+                          <form onSubmit={handleSubmit}>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                              < FirstNamesComponent />
+                              < LastNamesComponent />
+                                  
+                            </div>
+                            < TelefonAndEmailComponent />
+                            < SubmitButton />
+
+                          </form>
+
+                          <p className="text-[#00ff41] text-[10px] mt-6 text-center opacity-40 uppercase">
+                            &gt; Desconectando del sistema simulado...
+                          </p> 
+
+                        </> );
+
+        return reply;
+      }
+
+      function OuterComponent() {
+
+       const reply = (   
+          <div className="min-h-screen flex items-center justify-center p-6 font-mono">
+            <div className="max-w-lg w-full border border-[#00ff41] p-8 shadow-[0_0_20px_rgba(0,255,65,0.2)] bg-black">
+
+              <h2 className="text-[#00ff41] text-2xl mb-6 text-center uppercase tracking-tighter drop-shadow-[0_0_5px_#00ff41]">
+                Registro de Usuario [Nivel 1]
+              </h2>
+
+              <InnerComponent/>    
+            </div>
+          </div> );
+
+        return reply;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<OuterComponent />);
+    </script>
+  </body>
+</html>

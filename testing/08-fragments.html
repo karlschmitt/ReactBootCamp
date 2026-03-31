@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Fragments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+ 
+  <body class="bg-black m-0 p-0">
+
+    <div id="root"></div>
+    <!-- Load React, ReactDOM, and Babel (to handle JSX) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+      // PASTE YOUR SNIPPET HERE
+      function MyInnerComponent() {
+           
+        const reply = (
+          <>
+            <h1 className="text-5xl" >I am a heading&#128236; </h1>
+            <h2 className="text-3xl" >I am a heading two&#128240; </h2>
+            <p className="text-xl" >I am a paragraph&#128226; </p>
+          </>
+        );
+           
+        return reply;
+      }
+
+      function MyOuterComponent() {
+
+        const reply = (
+
+          <div className="flex h-screen items-center justify-center bg-black">
+            <div className="text-[#00ff41] font-mono tracking-widest">
+              <MyInnerComponent />
+            </div>
+          </div>
+        );
+           
+        return reply;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<MyOuterComponent />);
+
+    </script>
+  </body>
+</html>

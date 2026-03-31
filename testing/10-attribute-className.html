@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+    <!-- Load React, ReactDOM, and Babel (to handle JSX) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // PASTE YOUR SNIPPET HERE
+      function MyComponent() {
+        return <h1>It works!</h1>;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<MyComponent />);
+    </script>
+  </body>
+</html>

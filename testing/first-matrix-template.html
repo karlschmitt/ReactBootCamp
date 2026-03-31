@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matrix React</title>
+  </head>
+  <body class="bg-black m-0 p-0">
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="text/babel">
+      function MyComponent() {
+        return (
+          /* 
+            h-screen: makes it full height
+            flex: centers the text
+            font-mono: gives it the 'code' look
+            text-[#00ff41]: the exact Matrix green
+          */
+          <div className="bg-black h-screen flex flex-col items-center justify-center font-mono">
+            <div className="border border-[#00ff41] p-10 shadow-[0_0_20px_#00ff41]">
+              <h1 className="text-[#00ff41] text-4xl mb-4 uppercase tracking-widest drop-shadow-[0_0_5px_#00ff41]">
+                System Failure
+              </h1>
+              <p className="text-[#00ff41] animate-pulse text-xl">
+                > Wake up, Neo...
+              </p>
+              <p className="text-[#00ff41] mt-2 opacity-70">
+                > The Matrix has you.
+              </p>
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<MyComponent />);
+    </script>
+  </body>
+</html>

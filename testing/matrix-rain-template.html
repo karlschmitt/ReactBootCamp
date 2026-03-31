@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matrix Rain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black m-0 p-0">
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useEffect, useRef } = React;
+
+        function MatrixRain() {
+          const canvasRef = useRef(null);
+
+          useEffect(() => {
+            const canvas = canvasRef.current;
+            const ctx = canvas.getContext('2d');
+
+            // Make canvas full screen
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Matrix characters (Katakana + Latin)
+            const characters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+
+            function draw() {
+              // Semi-transparent black to create trailing effect
+              ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+              ctx.fillStyle = '#00ff41'; // Matrix Green
+              ctx.font = fontSize + 'px monospace';
+
+              for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Reset drop to top randomly after it hits bottom
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                  drops[i] = 0;
+                }
+                drops[i]++;
+              }
+            }
+
+            const interval = setInterval(draw, 33);
+            return () => clearInterval(interval);
+          }, []);
+
+          return <canvas ref={canvasRef} className="absolute inset-0 z-0" />;
+        }
+
+        function MyComponent() {
+          return (
+            <div className="relative bg-black h-screen w-full flex items-center justify-center overflow-hidden">
+              {/* Background Rain */}
+              <MatrixRain />
+              
+              {/* Foreground Content */}
+              <div className="relative z-10 text-center bg-black/60 p-10 border border-[#00ff41] shadow-[0_0_20px_#00ff41]">
+                <h1 className="text-[#00ff41] text-5xl font-mono mb-4 uppercase tracking-widest">
+                  The Matrix
+                </h1>
+                <p className="text-[#00ff41] font-mono animate-pulse">
+                  [ SYSTEM FAILURE ]
+                </p>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<MyComponent />);
+
+     </script>
+
+  </body>
+
+</html>
