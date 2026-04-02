@@ -7,10 +7,46 @@
     <title>Life Long Learning</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+          h1 { @apply text-4xl font-bold mb-8; }
+          h2 { @apply text-2xl font-semibold mb-6 mt-8; }
+          h3 { @apply text-2xl font-semibold mb-4 mt-8; }
+          a { @apply underline hover:text-white transition-colors; }
+        }
+    </style>
+
   </head>
-  <body>
-    <main>
-        <h1>Life Long Learning &#127891; </h1>
+  <body class="bg-black m-0 p-0 overflow-hidden">
+    <main class="min-h-screen bg-black text-[#00ff41] font-mono flex flex-col items-center justify-center p-4 text-center">
+        <div>
+          <h1>Life Long Learning &#128218:  </h1>
+          <h2>The story of my life.  &#128640;  </h2>
+          <p>Soldiers, We are usung the methaphor of a military boot camp for learning new things.</p>
+        </div>
+        <div>
+          <h1>Big Picture &#127760; </h1>
+          <img src="images/BootCampBicycle.png" alt="Boot Camp Bicycle">
+          <ol>
+            <li><a href="https://react.dev/">React</a></li>
+            <li><a href="https://spring.io/projects/spring-boot">Spring Boot</a></li>
+            <li><a href="https://github.com/postgresml/postgresml">PostgresML</a></li>
+          </ol>
+        </div>
+        <div>
+         <h1>Frontend &#128187; </h1>
+          <img src="images/BootCampOnion.png" alt="Bootcamp Onion">
+          <ol>
+            <li><a href="">HTTP &#128225; </a></li>
+            <li><a href="">HTML &#128240; </a></li>
+            <li><a href="">CSS &#9993; </a></li>
+            <li><a href="">JavaScript</a></li>
+            <li><a href="">TypeScript</a></li>
+            <li><a href="">React</a></li>
+            <li><a href="">Angular</a></li>
+          </ol>
           <h2>HTML</h2>
             <ul>
               <li><a href="https://www.freecodecamp.org/news/html-starter-template-a-basic-html5-boilerplate-for-index-html/">HTML Starter Template</a></li>
@@ -23,30 +59,62 @@
             <ul>
               <li><a href=""></a></li>
             </ul>
+          <h2>Node</h2>
+            <ul>
+              <li><a href="https://nodejs.org/en">Run Java Script everxwhere</a></li>
+              <li><a href="https://assets.digitalocean.com/books/how-to-code-in-nodejs.pdf"></a></li>
+              <li><a href="https://www.freecodecamp.org/news/get-started-with-nodejs/">How to get started with Node.js</a></li>
+              <li><a href=""></a></li>
+            </ul>
+          <h2>Curl</h2>
           <h2>JavaScript</h2>
             <ul>
-              <li><a href=""></a></li>
+              <li><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+              <li><a href="https://web.dev/learn/javascript">web.dev</a></li>
+              <li><a href="https://www.theodinproject.com/">The Odin Project</a></li>
+              <li><a href="https://www.javascripttutorial.net/"></a></li>
+            </ul>
+          <h2>OOP</h2>
+            <ul>
+              <li><a href="https://www.digitalocean.com/community/tutorials/understanding-objects-in-javascript">OOP in JavaScript</a></li>  
             </ul>
           <h2>TypeScript</h2>
             <ul>
-              <li><a href=""></a></li>
+              <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+              <li><a href="https://www.typescriptlang.org/play/">Playground</a></li>
             </ul>
+          <h2>Document Object Model DOM</h2>
+            <ul>
+              <li><a href="https://www.javascripttutorial.net/javascript-dom/">JavaScript DOM Tutorial</a></li>
+              <li><a href=https://www.freecodecamp.org/news/the-javascript-dom-manipulation-handbook/"">DOM Handbook</a></li>
+            </ul>
+
           <h2>React with JavaScript</h2>
             <ul>
-              <li><a href=""></a></li>
+              <li><a href="https://react.dev/">The library for web and native user interfaces</a></li>
+              <li><a href="https://react.dev/learn">Get started</a></li>
             </ul>
           <h2>React with TypeScript</h2>
             <ul>
-              <li><a href=""></a></li>
+              <li><a href="https://www.typescriptlang.org/docs/handbook/react.html">Typescript and React</a></li>
+              <li><a href="https://react.dev/learn/typescript">Using Typescript</a></li>
             </ul>
           <h2>Material UI</h2>
             <ul>
-              <li><a href=""></a></li>
+              <li><a href="https://mui.com/material-ui/getting-started/">Material UI Overview</a></li>
+              <li><a href="https://mui.com/material-ui/getting-started/learn/">Learning resources</a></li>
             </ul>
           <h2>Verify your skils &#128270; </h2>
             <ul>
               <li><a href="https://exercism.org">Exercism</a></li>
             </ul>
+        </div>
+        <div>
+          <h1>Backend &#9729; </h1>
+        </div>
+        <div>
+          <h1>Persistency &#128187; </h1>
+        </div>
     </main>
     <script src="index.js"></script>
   </body>
